@@ -1,10 +1,9 @@
+var moment = require('moment');
+
 var getPrettyTime = () => {
-  var now = new Date();
-  var day = now.getDay();
-  var month = now.getMonth();
-  if(day < 10) day = '0' + day;
-  if(month < 10) month = '0' + month;
-  return `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}, ${day}.${month}.${now.getFullYear()}}`;
+
+  var date = moment();
+  return date.format('h:mm a');
 }
 
 var generateMessage = (from, text) => {
