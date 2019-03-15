@@ -4,7 +4,7 @@ function scrollToBottom() {
   // Selectors
   var messages = jQuery('#chat-window');
   var newMessage = messages.children('li:last-child');
-  // Hights
+  // Hights 
 
   var clientHeight = messages.prop('clientHeight');
   var scrollTop = messages.prop('scrollTop');
@@ -18,8 +18,6 @@ function scrollToBottom() {
   }
 
 };
-
-
 
 socket.on('connect', function(){
   console.log('Connected to server.');
