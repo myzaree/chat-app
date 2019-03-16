@@ -67,6 +67,7 @@ socket.on('newLocationMessage', function(message) {
     createdAt: message.createdAt
   });
   jQuery('#chat-window').append(html);
+  scrollToBottom();
   // var li = jQuery('<li></li>');
   // var a = jQuery('<a target="_blank">My current location</a>');
   // li.text(`${message.from} ${message.createdAt}: `);
@@ -80,7 +81,6 @@ jQuery('#message-form').on('submit', function(event){
   var messageTextbox = jQuery('[name=message]');
 
   socket.emit('createMessage', {
-    from: jQuery('[name=userName]').val(),
     text: messageTextbox.val()
   }, function(){
     messageTextbox.val('');
